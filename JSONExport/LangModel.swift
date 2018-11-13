@@ -84,10 +84,10 @@ class LangModel{
             modelStart          = mStart
         }
 
-		setter = dictionary["setter"] as? String
-		staticImports = dictionary["staticImports"] as? String
+		setter                  = dictionary["setter"] as? String
+		staticImports           = dictionary["staticImports"] as? String
 		supportsFirstLineStatement = (dictionary["supportsFirstLineStatement"] as? NSString)?.boolValue
-        firstLineHint = dictionary["firstLineHint"] as? String
+        firstLineHint           = dictionary["firstLineHint"] as? String
 		utilityMethods = [UtilityMethod]()
 		if let utilityMethodsArray = dictionary["utilityMethods"] as? [NSDictionary]{
 			 for dic in utilityMethodsArray{
@@ -95,15 +95,15 @@ class LangModel{
 				utilityMethods.append(value)
 			}
 		}
-        reservedKeywords = dictionary["reservedKeywords"] as? [String]
+        reservedKeywords            = dictionary["reservedKeywords"] as? [String]
 		wordsToRemoveToGetArrayElementsType = dictionary["wordsToRemoveToGetArrayElementsType"] as? [String]
         
-        if let headerFileDataData = dictionary["headerFileData"] as? NSDictionary{
+        if let headerFileDataData   = dictionary["headerFileData"] as? NSDictionary{
             headerFileData = HeaderFileData(fromDictionary: headerFileDataData)
         }
         
-        supportMutualRelationships = (dictionary["supportMutualRelationships"] as? NSString)?.boolValue
-        if let authorDictionary = dictionary["author"] as? NSDictionary{
+        supportMutualRelationships  = (dictionary["supportMutualRelationships"] as? NSString)?.boolValue
+        if let authorDictionary     = dictionary["author"] as? NSDictionary{
             author = Author(fromDictionary: authorDictionary)
         }
 	}
